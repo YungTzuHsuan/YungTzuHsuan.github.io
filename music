@@ -1,0 +1,26 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script> 
+<script>
+    //定义audio变量为音频播放控件ID
+    var audio = document.getElementById("music");
+    //定义一个变量status作为当前播放状态并赋值
+    var status = 1;
+    //使音频默认自动播放
+    $(document).ready(function(){
+        audio.play();
+    });
+    //设置按钮点击事件
+    $("#switch").click(function(){
+        if (status>0) {
+            audio.pause();
+            $(this).removeClass("music-on");
+            $(this).addClass("music-off");
+            status = 0;
+        }
+        else {
+            audio.play();
+            $(this).removeClass("music-off");
+            $(this).addClass("music-on");
+            status = 1;
+        }
+    });
+</script>
